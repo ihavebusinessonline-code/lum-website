@@ -27,3 +27,11 @@ Locally stored sample assets are sourced from Unsplash and its free-use photo li
 - `portrait.jpg`: [Woman holding black DSLR camera](https://unsplash.com/photos/woman-holding-black-dslr-camera-zrk7WirlxgM).
 
 [Unsplash license](https://unsplash.com/license). Replace sample photography with the studio’s own work for a real launch.
+
+## Contact form delivery
+
+The contact section includes responsive, accessible required fields, inline validation, a sending state, and success/error feedback. It preserves the existing static export and uses no extra packages.
+
+The form submits asynchronously to `https://formspree.io/f/xqppwpeo` using JSON and an `Accept: application/json` header. This public submission URL requires no private API keys. To override it, copy `.env.example` to `.env.local`, update `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT`, and restart development or rebuild.
+
+A synchronous submission guard and disabled controls prevent duplicate submissions while a request is pending. Success appears only after an HTTP 2xx response, then the fields reset. Rejected requests, network failures, and timeouts show an accessible error and preserve entered details for retry. No inquiries are stored locally. Recipient delivery and spam settings are managed in Formspree.
