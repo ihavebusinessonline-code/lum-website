@@ -35,3 +35,15 @@ The contact section includes responsive, accessible required fields, inline vali
 The form submits asynchronously to `https://formspree.io/f/xqppwpeo` using JSON and an `Accept: application/json` header. This public submission URL requires no private API keys. To override it, copy `.env.example` to `.env.local`, update `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT`, and restart development or rebuild.
 
 A synchronous submission guard and disabled controls prevent duplicate submissions while a request is pending. Success appears only after an HTTP 2xx response, then the fields reset. Rejected requests, network failures, and timeouts show an accessible error and preserve entered details for retry. No inquiries are stored locally. Recipient delivery and spam settings are managed in Formspree.
+
+## Static export assets and SEO
+
+The image loader maps each photo and configured width to a checked-in WebP in
+`public/images/responsive/`. When replacing a hero, portrait, or gallery photo,
+regenerate its WebP variants at 256, 384, 640, 828, and 1080 pixels wide using
+quality 86. The lightbox loads the original gallery JPEG on demand.
+
+Set `SITE_URL` to the actual HTTPS production origin before running
+`npm run build` for deployment. The build uses it for the homepage canonical,
+the homepage entry in `sitemap.xml`, and the sitemap URL in `robots.txt`.
+Without it, local builds omit those URLs.
