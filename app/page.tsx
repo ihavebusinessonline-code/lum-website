@@ -5,9 +5,7 @@ import Gallery from './gallery';
 import ContactForm from './contact-form';
 import { siteUrl } from './site-url';
 
-export const metadata: Metadata = siteUrl
-  ? { alternates: { canonical: siteUrl.href } }
-  : {};
+export const metadata: Metadata = { alternates: { canonical: siteUrl.href } };
 
 const questions = [
   ['We’re a little camera shy. Is that okay?', 'More than okay. You don’t need to know how to pose. I’ll offer gentle direction when you need it, then give you room to be yourselves. The best photographs usually happen in between.'],

@@ -43,7 +43,6 @@ The image loader maps each photo and configured width to a checked-in WebP in
 regenerate its WebP variants at 256, 384, 640, 828, and 1080 pixels wide using
 quality 86. The lightbox loads the original gallery JPEG on demand.
 
-Set `SITE_URL` to the actual HTTPS production origin before running
-`npm run build` for deployment. The build uses it for the homepage canonical,
-the homepage entry in `sitemap.xml`, and the sitemap URL in `robots.txt`.
-Without it, local builds omit those URLs.
+The homepage canonical, `sitemap.xml`, and the sitemap reference in
+`robots.txt` use `https://ihavebusinessonline.com` by default. Set `SITE_URL`
+before building if the production origin changes.

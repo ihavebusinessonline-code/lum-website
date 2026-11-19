@@ -10,4 +10,4 @@ function getSiteUrl(origin: string): URL {
   return url;
 }
 
-export const siteUrl = configuredOrigin ? getSiteUrl(configuredOrigin) : undefined;
+export const siteUrl = getSiteUrl(configuredOrigin || 'https://ihavebusinessonline.com');
