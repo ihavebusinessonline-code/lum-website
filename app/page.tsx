@@ -26,7 +26,25 @@ export default function Home() {return <>
     <section id="services" className="services wrap section-space" aria-labelledby="services-title"><div className="section-heading"><div><p className="eyebrow">MADE FOR YOUR KIND OF LOVE</p><h2 id="services-title">The <em>experience.</em></h2></div><p>Thoughtful from our first conversation<br/>to your last favorite photograph.</p></div><div className="service-grid">{[{n:'01',title:'Weddings',text:'The whole story. The joyful chaos, the quiet glances, and the people who make it yours. Honest coverage, with care for every chapter.',meta:'FULL-DAY STORYTELLING'},{n:'02',title:'Elopements',text:'Just your people, your place, your promise. An intimate celebration deserves photographs that hold every bit of its meaning.',meta:'SMALL CELEBRATIONS, BIG FEELINGS'},{n:'03',title:'Couples',text:'An afternoon to slow down and be together. For engagements, anniversaries, or simply because this season deserves to be remembered.',meta:'A LITTLE TIME, JUST FOR YOU'}].map(s=><article key={s.n}><span className="service-number">{s.n}</span><h3>{s.title}</h3><p>{s.text}</p><span className="eyebrow">{s.meta}</span></article>)}</div></section>
     <section className="testimonials section-space" aria-labelledby="testimonial-title"><div className="wrap"><h2 id="testimonial-title" className="eyebrow testimonial-heading">WORDS THAT MEAN THE WORLD</h2><span className="quote-mark" aria-hidden="true">“</span><blockquote>Somehow, she captured exactly<br className="desktop-break"/> how it <em>felt</em> to be us.</blockquote><p className="quote-detail">“We forgot about the camera and just enjoyed our day. Looking through our photographs feels like living it all over again. We couldn’t have asked for more.”</p><p className="eyebrow">JAMIE & ALEX <span className="quote-divider">/</span> A CALIFORNIA WEDDING</p><div className="second-quote"><blockquote>Every little moment,<br/>beautifully <em>remembered.</em></blockquote><p className="quote-detail">“From the first conversation, we felt completely at ease. Our photographs are full of the laughter and little details we want to remember forever.”</p><p className="eyebrow">EMMA & DANIEL <span className="quote-divider">/</span> A COUPLES SESSION</p></div></div></section>
     <section className="faq wrap section-space" aria-labelledby="faq-title"><div><p className="eyebrow">A LITTLE MORE TO KNOW</p><h2 id="faq-title">Good <em>questions.</em><br/>Honest answers.</h2><p>Wondering about something else?<br/><a className="text-link" href={mail}>I’m always happy to chat</a></p></div><div className="faq-list">{questions.map(([q,a],i)=><details key={q} name="faq"><summary><span className="faq-number">0{i+1}</span><span>{q}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div></section>
-    <section id="contact" className="contact section-space" aria-labelledby="contact-title"><div className="wrap"><p className="eyebrow">EVERY BEAUTIFUL STORY STARTS SOMEWHERE</p><h2 id="contact-title">Let’s make something<br/><em>worth remembering.</em></h2><p>Tell me about your person, your plans, and what matters most.<br/>I’d love to hear it all.</p><ContactForm/><span className="contact-footnote">BASED IN CALIFORNIA. FOLLOWING LOVE EVERYWHERE.</span></div></section>
+    <section id="contact" className="contact section-space" aria-labelledby="contact-title">
+      <div className="wrap">
+        <p className="eyebrow">EVERY BEAUTIFUL STORY STARTS SOMEWHERE</p>
+        <h2 id="contact-title">Let’s make something<br/><em>worth remembering.</em></h2>
+        <p>Tell me about your person, your plans, and what matters most.<br/>I’d love to hear it all.</p>
+        <ContactForm/>
+        <span className="contact-footnote">BASED IN CALIFORNIA. FOLLOWING LOVE EVERYWHERE.</span>
+        <iframe
+          className="contact-map"
+          title="Google Maps view of US Bank Tower"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2961.366726585442!2d-118.25442939999999!3d34.05126589999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b36b1f109b%3A0x6ba8f2d152c0ad4a!2sUS%20Bank%20Tower!5e1!3m2!1sen!2sde!4v1795554335008!5m2!1sen!2sde"
+          width={600}
+          height={450}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      </div>
+    </section>
   </main>
   <footer className="wrap"><div className="footer-top"><a className="wordmark" href="/" aria-label="Back to LUM Photography home">LUM<span>.</span><small>PHOTOGRAPHY</small></a><p>For the moments.<br/>For the feeling. For you.</p><nav aria-label="Footer navigation"><a href="#work">Selected work</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div><div className="footer-bottom"><span>© 2026 LUM. Photography</span><span>FICTIONAL STUDIO · SAMPLE PHOTOGRAPHY & STORIES</span><a href="#top">Back to top</a></div></footer>
 </>;}
